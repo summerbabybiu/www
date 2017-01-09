@@ -3,7 +3,7 @@ nodejs:
   ports:
     - "3000:3000"
   volumes:
-    - ./app/src/:/data/app:ro
+    - ./app/src/:/data/app
   links:
     - mongodb:mongodb
 
