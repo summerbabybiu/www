@@ -5,7 +5,13 @@ nodejs:
   volumes:
     - ./app/src/:/data/app
   links:
-    - mongodb:mongodb
+    - mongodb:MONGODB_URL
+parse:
+  build: ./parse-server
+  ports:
+    - "1337:1337"
+  links:
+    - mongodb:MONGODB_URL
 
 mongodb:
   image: mongo:latest
