@@ -6,6 +6,7 @@ nodejs:
     - ./app/src/:/data/app
   links:
     - mongodb:MONGODB_URL
+    - parse:PARSE_URL
 parse:
   #build: ./parse-server
   image: stephenwzl/www_parse:latest

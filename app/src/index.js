@@ -1,9 +1,8 @@
 var express = require('express'),
     app = express();
 
-app.get('/', (req, res) => {
-    res.send('site is in building');
-});
+//添加路由
+require('./routes')(app);
 
 if (module.parent) {
     module.exports = app;
