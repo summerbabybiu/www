@@ -9,7 +9,7 @@ nodejs:
 
 mongodb:
   image: mongo:latest
-  ports:
-    - "127.0.0.1:27017:27017"
+  expose:
+    - 27017
   volumes:
     - ./database/:/data/db
