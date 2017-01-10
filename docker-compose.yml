@@ -7,7 +7,8 @@ nodejs:
   links:
     - mongodb:MONGODB_URL
 parse:
-  build: ./parse-server
+  #build: ./parse-server
+  image: stephenwzl/www_parse:latest
   ports:
     - "1337:1337"
   links:
