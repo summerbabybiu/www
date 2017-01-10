@@ -34,6 +34,7 @@ exports.User.index({ name: 1 }, { unique: true }).exec();// 根据用户名找�
 exports.Post = mongolass.model('Post', {
   author: { type: Mongolass.Types.ObjectId },
   title: { type: 'string' },
+  summury: { type: 'string' },
   content: { type: 'string' },
   pv: { type: 'number' }
 });

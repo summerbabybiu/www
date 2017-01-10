@@ -29,6 +29,7 @@ router.post('/', checkLogin, function(req, res, next) {
   var author = req.session.user._id;
   var title = req.fields.title;
   var content = req.fields.content;
+  var summury = req.fields.summury;
 
   // 校验参数
   try {
@@ -37,6 +38,9 @@ router.post('/', checkLogin, function(req, res, next) {
     }
     if (!content.length) {
       throw new Error('请填写内容');
+    }
+    if (!summury || !summury.length ) {
+      summury = title;
     }
   } catch (e) {
     req.flash('error', e.message);
@@ -47,6 +51,7 @@ router.post('/', checkLogin, function(req, res, next) {
     author: author,
     title: title,
     content: content,
+    summury: summury,
     pv: 0
   };
 
