@@ -1,3 +1,12 @@
+nodejs:  
+  build: ./nodejs
+  ports:
+    - "127.0.0.1:3000:3000"
+  volumes:
+    - ./app/src/:/data/app
+  links:
+    - mongodb:MONGODB_URL
+    - parse:PARSE_URL
 parse:
   #build: ./parse-server
   image: stephenwzl/www_parse:latest
