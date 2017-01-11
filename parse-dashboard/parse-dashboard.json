@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "serverURL": "http://localhost:1337/parse",
+      "appId": "STEPHENW",
+      "masterKey": "STEPHENW",
+      "appName": "Project 2017"
+    }
+  ],
+  "users": [
+    {
+      "user":"admin",
+      "pass":"admin"
+   }
+  ]
+}

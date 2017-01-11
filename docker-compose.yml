@@ -1,3 +1,7 @@
+dashboard:
+  image: stephenwzl/parse-dashboard:latest
+  ports: 
+    - "4040:4040"
 parse:
   #build: ./parse-server
   image: stephenwzl/www_parse:latest
