@@ -7,11 +7,14 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "export NODE_ENV=dev && supervisor index.js"
+    "dev": "export NODE_ENV=dev && supervisor index.js",
+    "test": "export NODE_ENV=dev && node test/signup.js"
   },
   "author": "stephenw",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "parse": "^1.9.2"
   }
