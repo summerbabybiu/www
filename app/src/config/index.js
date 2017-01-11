@@ -2,6 +2,7 @@ let env = process.env.NODE_ENV;
 
 if (env == 'dev') {
   module.exports = {
+    is_development: true,
     session: {
       maxAge: 60 * 5  //5 minutes
     },
