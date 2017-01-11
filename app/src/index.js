@@ -8,6 +8,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./models').initdb();
 //添加路由
 require('./routes')(app);
+//错误处理
+app.use(require('./middlewares/error_handle'));
 
 if (module.parent) {
     module.exports = app;
