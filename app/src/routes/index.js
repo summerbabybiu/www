@@ -1,12 +1,18 @@
+var path = require('path');
+
+function pathForHtml(file_name) {
+  return path.join(__dirname + '/../public/', name);
+}
+
 module.exports = function (app) {
   app.get('/', function (req, res) {
-    res.send('site is in building');
+    res.sendFile(pathForHtml('index.html'));
   });
 
   // 404 page
   app.use(function (req, res) {
     if (!res.headersSent) {
-      res.send('404');
+      res.sendFile(pathForHtml('404.html'));
     }
   });
 };
