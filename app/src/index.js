@@ -1,9 +1,9 @@
 var express = require('express'),
     app = express(),
-    path = require('path');
+    config = require('./config');
 
 //静态资源    
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(config.public_folder));
 //初始化数据SDK
 require('./models').initdb();
 //添加路由
