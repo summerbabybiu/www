@@ -7,11 +7,14 @@ module.exports = {
   //   password: string,
   //   email: string
   // }
-  create: function create(info) {
+  create: function(info) {
     var user = new Parse.User();
     user.setUsername(info.username);
     user.setPassword(info.password);
     user.setEmail(info.email);
     return user.signUp();
+  },
+  login: function (username, password) {
+    return Parse.User.logIn(username, password);
   }
 };

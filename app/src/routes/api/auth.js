@@ -6,6 +6,7 @@ var route = require('express').Router(),
 
 //此注册针对系统用户，不对访客开放
 //开发时不要把访客有关的API写到这里来
+//暂不提供修改密码，DBA才有权限修改密码
 route.post('/register', (req, res, next) => {
     var username = req.body.username;
     var password = req.body.password;
@@ -31,6 +32,19 @@ route.post('/register', (req, res, next) => {
     });
 
 });
+
+route.post('/login', (req, res) => {
+    var username = req.body.username;
+    var password = req.body.password;
+    User.login(username, password)
+    .then(user => {
+        res.cookie('user_token', user.getSessionToken(), { maxAge: config.session.maxAge });
+        res.send(user);
+    })
+    .catch(e => {
+        res.status(400).send(e.message);
+    })
+})
 
 route.get('/user', check_login, (req, res) => {
     if (req.logged_user) {

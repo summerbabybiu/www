@@ -10,6 +10,7 @@ app.use(express.static(config.public_folder));
 //初始化数据SDK
 Parse.serverURL = config.parse.server_url;
 Parse.initialize(config.parse.app_id);
+Parse.User.enableUnsafeCurrentUser();   //enable so it can use User.become, only for admins
 //cookie 和 body解析的中间件
 app.use(cookie_parser());
 app.use(body_parser.json());
@@ -17,6 +18,7 @@ app.use(body_parser.urlencoded({ extended: true }));
 //添加路由
 require('./routes')(app);
 //错误处理
+app.use(require('./middlewares/error_handle').error_handle);
 app.use(require('./middlewares/error_handle').not_found);
 
 if (module.parent) {

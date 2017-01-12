@@ -6,7 +6,7 @@ if (env == 'dev') {
     is_development: true,
     public_folder: path.join(`${__dirname}/../`, 'public'),
     session: {
-      maxAge: 60 * 60 * 24 * 5 //5 days
+      maxAge: 60 * 60 * 24 * 30  //30 days
     },
     parse: {
       app_id: 'STEPHENW',
@@ -17,7 +17,7 @@ if (env == 'dev') {
   module.exports = {
     public_folder: path.join(`${__dirname}/../`, 'public'),
     session: {
-      maxAge: 60 * 60 * 24 * 30
+      maxAge: 60 * 60 * 24 * 30 * 6 //6 month
     },
     parse: {
       app_id: 'STEPHENW',
