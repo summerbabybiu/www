@@ -1,6 +1,21 @@
 <html>
-  <title>building</title>
+  <title>stephenw的站点 - in building</title>
   <body>
-    <h1>in building</h1>
+    <div id="app">
+      <h1 v-if="post_load_error">载入失败</h1>
+      <div v-if="post_loaded">
+        <h1>载入成功</h1><br/>
+        <div v-for="post in posts" style="border:1px dashed #999999">
+          <h3>{{post.title}}</h3>
+          <p style="background: #eeeeee">{{post.summary}}</p>
+          <div v-html="post.content"></div>
+        </div>
+        <p>第{{current_page}}页，共{{total_page}}页，{{post_count}}篇文章 </p>
+      </div>
+
+    </div>
+    <script src="https://unpkg.com/vue@2.1.8/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/vue-resource@1.0.3/dist/vue-resource.min.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
