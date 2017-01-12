@@ -2,6 +2,14 @@ var path = require('path'),
     fs = require('fs'),
     config = require('../config');
 
+exports.error_handle = function(error, req, res, next) {
+  if (error) {
+    let code = error.code || 400;
+    res.status(code).send(error.message);
+  } else {
+    next();
+  }
+}
 //这个函数会处理路径
 //假如路径最后一层为名字的html存在，则返回html
 //否则返回 404
