@@ -1,12 +1,11 @@
-onkey-init:
+onekey-init:
 	@make install-dependency
 	@make dev-docker
 
 install-dependency:
 	@npm install -g cnpm --registry=https://registry.npm.taobao.org
 	@cnpm install -g supervisor
-	@cd app/src/
-	@cnpm install
+	@cd app/src/ && npm install
 
 deploy-prod:
 	@make install-dependency
