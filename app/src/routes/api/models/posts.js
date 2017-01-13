@@ -48,7 +48,6 @@ module.exports = {
       query.descending('updatedAt');
       query.limit(limit);
       query.skip(limit * (page - 1));
-      query.include('author');
       return query.find()
     })
     .then(posts => {
