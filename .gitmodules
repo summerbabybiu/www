@@ -1,3 +1,0 @@
-[submodule "app/src"]
-	path = app/src
-	url = git@github.com:SummerCMS/API.git

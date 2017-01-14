@@ -1,17 +1,3 @@
-onekey-init:
-	@make install-dependency
-	@make dev-docker
-
-install-dependency:
-	@npm install -g cnpm --registry=https://registry.npm.taobao.org
-	@cnpm install -g supervisor
-	@cd app/src/ && npm install
-
-deploy-prod:
-	@make install-dependency
-	@make stop-prod
-	@make prod-docker
-
 dev-docker:
 	@docker-compose up -d
 
@@ -23,3 +9,10 @@ stop-dev:
 
 stop-prod:
 	@docker-compose -f docker-compose-prod.yml stop
+
+clone-api:
+	@git clone https://github.com/SummerCMS/API.git app/src
+
+init:
+	@make clone-api
+	@cd app/src/ && npm install
