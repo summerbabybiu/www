@@ -11,22 +11,17 @@
 
 * 需要 win10 专业版安装 node.js 和 docker
 
+##clone完项目后
+> 在项目根目录下 `make init` 即可安装API代码
+
 ##后端开发：  
-* 在工程目录下 `make onekey-init`
-
-> 结果：主代码依赖将会被安装，测试依赖的指令将会被安装，数据库环境将会被启动  
-
-* 主代码目录在 `app/src`下，跑 `npm run dev`将会启动开发，修改代码保存即会 reload
+* 在工程目录下 `make dev-docker`
+* 主代码目录在 `app/src`下，跑 `npm run dev`将会启动开发，修改代码保存即会 reload，这是一个独立的项目，代码提交转向[传送门](https://github.com/SummerCMS/API)
 * 访问 [http://localhost:4040](http://localhost:4040) 可以查看 数据库 dashboard
 
 ##前端开发  
 * 在工程目录下 `make deploy-prod`  
-
-前端代码在 `app/src/public`下面，这个目录下的所有资源都可以被外部访问  
->假如添加了 `demo.html`， 那么在浏览器中访问 [localhost:3000/demo](localhost:3000/demo) 即可访问（[localhost:3000/demo.html](localhost:3000/demo.html) 亦可）
-
-由于是同域，所以访问 API不存在跨域问题，只需要调用 `/api/:api_path`即可访问 restapi
-> 目前还没写什么API  @2017-1-11
+* clone [FE项目](https://github.com/SummerCMS/FE)执行开发
 
 ##DevOps
 ###docker常用命令
