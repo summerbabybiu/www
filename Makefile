@@ -11,7 +11,7 @@ stop-dev:
 	@docker-compose stop
 
 stop-prod:
-	@docker-compose -f docker-compose-prod.yml stop
+	@docker-compose -f production.yml stop
 
 stop-fe:
 	@docker-compose -f fe-compose.yml stop
