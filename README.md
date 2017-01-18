@@ -20,7 +20,7 @@
 * 访问 [http://localhost:4040](http://localhost:4040) 可以查看 数据库 dashboard
 
 ##前端开发  
-* 在工程目录下 `make deploy-prod`  
+* 在工程目录下 `make prod-docker`  
 * clone [FE项目](https://github.com/SummerCMS/FE)执行开发
 
 ##DevOps
